@@ -5,9 +5,10 @@ import dotenv from "dotenv"
 dotenv.config()
 const PORT=process.env.PORT|| 3000;
 var config={
-    headers:{
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MTRmMjQxOWZmNjgxMzIzN2JkY2YxYWE1MjBmNWRhNCIsIm5iZiI6MTczNTYxNDIwNS41MDQsInN1YiI6IjY3NzM1ZWZkYmYxMGZmMTk4NDYyMDQ1YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.joh8uzcQ1uVAiT1_JsWVxGklOusdvSqFqaR4_a0FF5g'
-    }
+   headers: {
+  Authorization: `Bearer ${process.env.TMDB_BEARER}`
+}
+
 }
 const Api_url="https://api.themoviedb.org/3"
 const app=express()
