@@ -27,7 +27,7 @@
      var item = content.results[i];
      var imageUrl = item.poster_path 
         ? "https://image.tmdb.org/t/p/w500" + item.poster_path 
-        : "https://via.placeholder.com/500x750?text=No+Image";
+       : "https://via.placeholder.com/500x750?text=No+Image";
      var title = item.title || item.name || "Untitled";
 var mediaType = item.media_type || "movie"; // or pass it if known
   %>

@@ -30,7 +30,7 @@ app.get("/", async (req, res) => {
 var searchbar="";
 app.post("/search",(req,res)=>{
 searchbar=req.body.search;
-console.log(searchbar)
+// console.log(searchbar)
 res.redirect("/searchbar")
 })
 // 
