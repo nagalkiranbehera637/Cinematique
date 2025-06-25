@@ -23,7 +23,7 @@ app.get("/", async (req, res) => {
         var result=request.data ;
         res.render('index.ejs', { content: result,length}); // Send only once
     } catch (e) {
-        console.error("Error in client side", e);
+        console.error("Error in client side", e.message);
         res.sendStatus(404);
     }
 });
