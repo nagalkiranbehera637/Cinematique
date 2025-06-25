@@ -1,0 +1,67 @@
+.main{
+   
+    margin-top: 4rem;
+    overflow:visible;
+    display: grid;
+    margin: 1rem;
+    gap: 1.5rem;
+    grid-template-columns: repeat(6,1fr);
+}
+.card{
+    
+    height:18rem ;
+}
+.card__img {
+    border-radius: 1.5rem;
+    
+    height: 14rem;
+    width: 100%; /* Ensures image container fills horizontal space */
+    overflow: hidden; /* Clips image if needed */
+    transition: all 0.2s;
+}
+
+.card__img > img {
+            /* Stretch image to container width */
+    height: 14rem; 
+    width: 100%;      /* Stretch image to container height */
+    object-fit: fill; /* Keeps aspect ratio without cropping */
+    display: block;      /* Removes bottom whitespace */
+}
+
+.card__img:hover{
+    transform: scale(1.05);
+}
+
+.card__title{
+    text-align: center;
+   margin-top: 10px;
+}
+.card__title>h4{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 530;
+    color: var(--searchcol);
+}
+
+@media (max-width: 1000px) {
+  .main {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,56 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinematique</title>
+    <link href="/styles/header.css" rel="stylesheet">
+    <link href="/styles/index_body.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <h1><a href="/">Cine<span style="color: blueviolet;font-size:medium;">matique</span></a></h1>
+        </div>
+        <div class="sec__part">
+        <div class="search__bar">
+            <form action="/search" method="post">
+    <input type="text" name="search" placeholder="Search movie or TV..." value="<%=searchbar %>">
+    <button type="submit">Search</button>
+</form>
+
+        </div>
+        </div>
+    </div>
+    <%if(length2){ %>
+    <div class="main">
+        <% for (var i = 0; i < length2; i++) { 
+      var item = content[i];
+   var imageUrl = item.poster_path 
+       ? "https://image.tmdb.org/t/p/w500" + item.poster_path 
+       : "https://via.placeholder.com/500x750?text=No+Image";
+   var title = item.title || item.name || "Untitled";
+ var mediaType = item.media_type || "movie";
+%>
+<a href="/card/<%= item.id %>?type=<%= mediaType %>" class="card">
+    <div class="card__img">
+        <img src="<%= imageUrl %>" alt="<%= title %>">
+    </div>
+    <div class="card__title">
+        <h4><%= title %></h4>
+    </div>
+</a>
+
+<% } %>
+    </div>
+    <% }else{ %>
+        <div class="zeroresult" style="color:rgb(220, 226, 233); font-weight:600;text-align:center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding:3rem;">
+            <h1 style="font-size: 2rem;">No Result on "<%= searchbar %>"</h1>
+        </div>
+        <% } %>
+
+</body>
+</html>
