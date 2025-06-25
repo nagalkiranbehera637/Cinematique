@@ -52,7 +52,7 @@ res.render('search.ejs', { content: final_result, length2:final_result.length, s
 
 
     } catch (e) {
-        console.error("Error in client side", e);
+        console.error("Error in client side", e.message);
         res.sendStatus(404);
     }
 
