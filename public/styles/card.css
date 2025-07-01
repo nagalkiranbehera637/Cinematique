@@ -110,6 +110,7 @@ body::before {
     width: fit-content;
     column-gap: 2rem;
     align-items: center;
+    border: none;
 }
 .genre>h3{
     font-weight: 500;
